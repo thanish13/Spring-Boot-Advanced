@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Spring Cloud Vault.iml" filepath="$PROJECT_DIR$/Spring Cloud Vault.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Spring-Boot-Advanced.iml" filepath="$PROJECT_DIR$/.idea/Spring-Boot-Advanced.iml" />
     </modules>
   </component>
