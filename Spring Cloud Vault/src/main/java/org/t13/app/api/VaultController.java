@@ -2,6 +2,8 @@ package org.t13.app.api;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.t13.app.dto.VaultSecretRequest;
+import org.t13.app.service.VaultWriteService;
 
 @RestController
 @RequestMapping("/vault")
