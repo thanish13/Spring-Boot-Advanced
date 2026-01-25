@@ -25,6 +25,7 @@ public class JdbcVaultConfig {
         assert data != null;
         ds.setUsername((String) data.get("username"));
         ds.setPassword((String) data.get("password"));
+        ds.setMaximumPoolSize(10);
 
         return ds;
     }
