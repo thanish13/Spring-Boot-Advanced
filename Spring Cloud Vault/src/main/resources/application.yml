@@ -10,8 +10,3 @@ spring:
         enabled: true
         backend: secret
         default-context: application
-
-  datasource:
-    url: jdbc:mysql://localhost:3306/mydb
-    username: CC_API_VAULT # References the 'username' key from the Vault path
-    password: kv:password # References the 'password' key from the Vault path

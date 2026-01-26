@@ -6,11 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.t13.app.dto.VaultSecretRequest;
 import org.t13.app.service.VaultWriteService;
-
-import java.time.Instant;
-import java.util.Base64;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 @RestController
