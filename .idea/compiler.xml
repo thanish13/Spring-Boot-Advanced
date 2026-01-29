@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Spring-Cloud-Vault" />
+        <module name="EH-Cache" />
       </profile>
     </annotationProcessing>
   </component>
