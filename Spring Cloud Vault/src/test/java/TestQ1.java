@@ -11,7 +11,7 @@ public class TestQ1 {
 
         Arrays.stream(s.split(""))
                 .filter(x -> !x.isBlank())
-                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new,Collectors.counting()))
+                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
                 .entrySet()
                 .stream()
                 .filter(x -> x.getValue() > 1)

@@ -5,6 +5,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/Spring Cloud Vault/pom.xml" />
+        <option value="$PROJECT_DIR$/EH-Cache/pom.xml" />
       </list>
     </option>
   </component>
