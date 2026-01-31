@@ -33,11 +33,13 @@ public class CachingConfig {
 
     @Bean
     public CacheManager jCacheCacheManager() {
+
         Map<String, CacheConfiguration<?, ?>> cacheMap = new HashMap<>();
 
         ResourcePoolsBuilder resourcePoolsBuilder = ResourcePoolsBuilder
                 .heap(3)
-                .offheap(1, MemoryUnit.MB) //min value is 1MB
+                .offheap(1, MemoryUnit.MB)
+                //min value is 1MB
                 ;
 
         ExpiryPolicy<Object, Object> expiryPolicy = createExpiryPolicy(Duration.ofMinutes(10), Duration.ofMinutes(5));
