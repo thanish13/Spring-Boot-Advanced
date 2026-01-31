@@ -1,4 +1,4 @@
-package main.java.org.t13.app.config;
+package org.t13.app.config;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
