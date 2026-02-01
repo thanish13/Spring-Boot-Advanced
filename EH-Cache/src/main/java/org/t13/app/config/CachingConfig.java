@@ -52,6 +52,7 @@ public class CachingConfig {
         EhcacheCachingProvider ehcacheCachingProvider = (EhcacheCachingProvider) getCachingProvider(EhcacheCachingProvider.class.getName());
         DefaultConfiguration defaultConfiguration = new DefaultConfiguration(cacheMap, ehcacheCachingProvider.getDefaultClassLoader());
         javax.cache.CacheManager cacheManager = ehcacheCachingProvider.getCacheManager(ehcacheCachingProvider.getDefaultURI(), defaultConfiguration);
+
         return new JCacheCacheManager(cacheManager);
     }
 
