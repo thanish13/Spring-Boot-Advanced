@@ -59,6 +59,7 @@ public class Q1 {
             int size = queue.size();
             for(int i=0;i<size;i++){
                 int[] current  = queue.poll();
+                assert current != null;
                 int curRow = current[0];
                 int curCol = current[1];
 
