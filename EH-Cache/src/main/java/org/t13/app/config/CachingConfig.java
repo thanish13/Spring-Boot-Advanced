@@ -41,7 +41,7 @@ public class CachingConfig {
                 //min value is 1MB
                 ;
 
-        ExpiryPolicy<Object, Object> expiryPolicy = createExpiryPolicy(Duration.ofMinutes(10), Duration.ofMinutes(5));
+        ExpiryPolicy<Object, Object> expiryPolicy = createExpiryPolicy(Duration.ofMinutes(1), Duration.ofMinutes(1));
 
         CacheConfiguration<Object, Object> cacheConfiguration = CacheConfigurationBuilder
                 .newCacheConfigurationBuilder(Object.class, Object.class, resourcePoolsBuilder)
