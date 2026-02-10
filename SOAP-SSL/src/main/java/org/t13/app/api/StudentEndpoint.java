@@ -21,3 +21,4 @@ public class StudentEndpoint {
         return response;
     }
 }
+

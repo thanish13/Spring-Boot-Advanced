@@ -40,7 +40,7 @@
                     </schemaIncludes>
                     <!-- Where generated classes will go -->
                     <generatePackage>org.t13.app.student</generatePackage>
-                    <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
+                    <generateDirectory>${project.build.sourceDirectory}</generateDirectory>
                 </configuration>
             </plugin>
         </plugins>
