@@ -17,4 +17,34 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <build>
+        <plugins>
+            <!-- JAXB2 Maven Plugin -->
+            <plugin>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb2-plugin</artifactId>
+                <version>0.14.0</version>
+                <executions>
+                    <execution>
+                        <id>generate-jaxb-classes</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- Location of your XSD -->
+                    <schemaDirectory>${project.basedir}/src/main/resources/</schemaDirectory>
+                    <schemaIncludes>
+                        <include>students.xsd</include>
+                    </schemaIncludes>
+                    <!-- Where generated classes will go -->
+                    <generatePackage>org.t13.app.student</generatePackage>
+                    <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
 </project>
