@@ -10,15 +10,16 @@ import org.t13.app.student.GetStudentResponse;
 @Endpoint
 public class StudentEndpoint {
 
-    private static final String NAMESPACE_URI = "http://example.com/student";
+    private static final String NAMESPACE_URI = "http://www.example.com/student";
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "GetStudentRequest")
     @ResponsePayload
     public GetStudentResponse getStudent(@RequestPayload GetStudentRequest request) {
         GetStudentResponse response = new GetStudentResponse();
-        response.setName("John Doe");
+        response.setName("Student #" + request.getId());
         response.setAge(21);
         return response;
     }
 }
+
 
