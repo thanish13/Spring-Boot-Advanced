@@ -1,0 +1,7 @@
+org\t13\app\config\WebServiceConfig.class
+org\t13\app\student\GetStudentResponse.class
+org\t13\app\student\ObjectFactory.class
+org\t13\app\student\GetStudentRequest.class
+org\t13\app\student\package-info.class
+org\t13\app\api\StudentEndpoint.class
+org\t13\app\SoapServiceApplication.class
