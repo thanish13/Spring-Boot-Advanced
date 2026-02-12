@@ -2,3 +2,4 @@
 /Spring Cloud Vault/target/**
 /EH-Cache/target/
 /Spring-Cloud-Vault/${project.build.directory}/
+/SOAP-SSL/target/
