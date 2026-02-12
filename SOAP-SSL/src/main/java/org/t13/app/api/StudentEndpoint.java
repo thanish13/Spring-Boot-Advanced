@@ -10,7 +10,7 @@ import org.t13.app.student.GetStudentResponse;
 @Endpoint
 public class StudentEndpoint {
 
-    private static final String NAMESPACE_URI = "http://www.example.com/student";
+    private static final String NAMESPACE_URI = "http://www.app.t13.org/student";
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "GetStudentRequest")
     @ResponsePayload

@@ -19,7 +19,7 @@ public class WebServiceConfig {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("StudentPort");
         wsdl11Definition.setLocationUri("/ws");
-        wsdl11Definition.setTargetNamespace("http://example.com/student");
+        wsdl11Definition.setTargetNamespace("http://www.app.t13.org/student");
         wsdl11Definition.setSchema(studentSchema);
         return wsdl11Definition;
     }
