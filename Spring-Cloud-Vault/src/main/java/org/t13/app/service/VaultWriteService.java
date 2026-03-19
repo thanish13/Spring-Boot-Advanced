@@ -5,10 +5,9 @@ import org.springframework.vault.core.VaultTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.time.Instant;
-import java.util.Base64;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Log4j2
 @Service
@@ -32,15 +31,23 @@ public class VaultWriteService {
         log.info("Write secret to path : {} successfully" ,path);
     }
 
-    public String writeFile(String app, String type, MultipartFile file) throws IOException {
-
-        String base64 = Base64.getEncoder().encodeToString(file.getBytes());
-
+    public String writeFile(String appName, String secretName, MultipartFile file) throws IOException {
         Map<String, Object> data = new HashMap<>();
-        data.put(type, base64);
-        data.put("uploadedAt", Instant.now().toString());
+        String path;
 
-        String path = "secret/data/" + app + "/jks";
+        if(Objects.requireNonNull(file.getOriginalFilename()).endsWith(".jks")){
+            String base64 = Base64.getEncoder().encodeToString(file.getBytes());
+
+            data.put(secretName, base64);
+            data.put("uploadedAt", Instant.now().toString());
+
+            path = "secret/data/" + appName + "/jks";
+        }else{
+            data.put(secretName, new String(file.getBytes(), StandardCharsets.UTF_8));
+            data.put("uploadedAt", Instant.now().toString());
+
+            path = "secret/data/" + appName + "/" + secretName;
+        }
 
         log.info("Write file to path : {}",path);
 

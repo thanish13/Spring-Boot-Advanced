@@ -30,17 +30,13 @@ public class VaultController {
         return ResponseEntity.ok("Secrets stored successfully in Vault");
     }
 
-    @PostMapping(value = "/jks", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<String> uploadJks(
-            @RequestParam String app,
-            @RequestParam String type,
+    @PostMapping(value = "/files", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<String> uploadFiles(
+            @RequestParam String appName,
+            @RequestParam String secretName,
             @RequestParam MultipartFile file) throws Exception {
 
-        if (!Objects.requireNonNull(file.getOriginalFilename()).endsWith(".jks")) {
-            return ResponseEntity.badRequest().body("Only .jks files allowed");
-        }
-
-        String path = vaultWriteService.writeFile(app, type, file);
+        String path = vaultWriteService.writeFile(appName, secretName, file);
 
         return ResponseEntity.ok("Stored in Vault at " + path);
     }
