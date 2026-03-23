@@ -19,6 +19,7 @@
         <module>Spring-Cloud-Vault</module>
         <module>EH-Cache</module>
         <module>SOAP-SSL</module>
+        <module>Spring-Batch</module>
     </modules>
 
     <parent>
