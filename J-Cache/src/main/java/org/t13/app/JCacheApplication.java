@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication // Combines @Configuration, @EnableAutoConfiguration, and @ComponentScan
-public class EHCacheApplication {
+public class JCacheApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EHCacheApplication.class, args);
+        SpringApplication.run(JCacheApplication.class, args);
     }
 }

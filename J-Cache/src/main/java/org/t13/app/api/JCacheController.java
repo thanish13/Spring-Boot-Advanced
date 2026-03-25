@@ -4,7 +4,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
-import org.springframework.util.StopWatch;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.t13.app.meta.ProductCacheLoader;
@@ -13,7 +12,7 @@ import java.io.IOException;
 
 @RestController
 @Slf4j
-public class EHCacheController {
+public class JCacheController {
 
     @Autowired
     private CacheManager cacheManager;
