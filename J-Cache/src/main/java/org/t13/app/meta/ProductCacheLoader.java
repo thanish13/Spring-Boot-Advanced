@@ -48,18 +48,5 @@ public class ProductCacheLoader {
         return response.body();
     }
 
-    public String getUsers() throws IOException, InterruptedException {
-
-        log.info("Loading User values");
-
-        HttpRequest request = HttpRequest.newBuilder()
-                .GET()
-                .uri(URI.create("https://fakestoreapi.com/products"))
-                .build();
-
-        HttpResponse<String> response = httpClient.send(request,HttpResponse.BodyHandlers.ofString());
-        log.info("Got response from User URL");
-        return response.body();
-    }
 }
 
