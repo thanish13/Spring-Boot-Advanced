@@ -16,6 +16,8 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+import static org.t13.app.config.CachingConfig.PRODUCT_CACHE;
+
 @Slf4j
 @Service
 public class ProductCacheLoader {
@@ -27,15 +29,14 @@ public class ProductCacheLoader {
 
     @PostConstruct
     public void loadCache() throws IOException, InterruptedException {
-        Cache cache = cacheManager.getCache("MY_CACHE");
-        cache.put("products", getDetails());
+        Cache cache = cacheManager.getCache(PRODUCT_CACHE);
+        cache.put("products", getProducts());
         log.info("Cache preloaded with products!");
     }
 
-    @Cacheable("MY_CACHE")
-    public String getDetails() throws IOException, InterruptedException {
+    public String getProducts() throws IOException, InterruptedException {
 
-        log.info("Loading values");
+        log.info("Loading Products values");
 
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()
@@ -43,7 +44,21 @@ public class ProductCacheLoader {
                 .build();
 
         HttpResponse<String> response = httpClient.send(request,HttpResponse.BodyHandlers.ofString());
-        log.info("Got response from URL");
+        log.info("Got response from Products URL");
+        return response.body();
+    }
+
+    public String getUsers() throws IOException, InterruptedException {
+
+        log.info("Loading User values");
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .GET()
+                .uri(URI.create("https://fakestoreapi.com/products"))
+                .build();
+
+        HttpResponse<String> response = httpClient.send(request,HttpResponse.BodyHandlers.ofString());
+        log.info("Got response from User URL");
         return response.body();
     }
 }

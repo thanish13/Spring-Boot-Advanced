@@ -22,8 +22,8 @@ public class JCacheController {
     private ProductCacheLoader productCacheLoader;
 
     // GET endpoint at: http://localhost:8080/hello
-    @GetMapping("/hello")
-    public String sayHello() throws IOException, InterruptedException {
+    @GetMapping("/products")
+    public String getProducts() throws IOException, InterruptedException {
 
         var products = cacheManager.getCache("MY_CACHE").get("products");
 
@@ -34,6 +34,12 @@ public class JCacheController {
 
         return cacheManager.getCache("MY_CACHE").get("products").toString();
 
+    }
+
+    @GetMapping("/getItems")
+    public String getItems() throws IOException, InterruptedException {
+
+        return cacheManager.getCache("MY_CACHE").get("products").toString();
 
     }
 }

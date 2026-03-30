@@ -28,7 +28,7 @@ public class CachingConfig {
 
     private static final Logger logger = LogManager.getLogger(CachingConfig.class);
 
-    private static final String MY_CACHE = "MY_CACHE";
+    public static final String PRODUCT_CACHE = "PRODUCT_CACHE";
 
     @Bean
     public CacheManager jCacheCacheManager() {
@@ -48,7 +48,7 @@ public class CachingConfig {
                 .withExpiry(expiryPolicy)
                 .build();
 
-        cacheMap.put(MY_CACHE, cacheConfiguration);
+        cacheMap.put(PRODUCT_CACHE, cacheConfiguration);
         EhcacheCachingProvider ehcacheCachingProvider = (EhcacheCachingProvider) getCachingProvider(EhcacheCachingProvider.class.getName());
         DefaultConfiguration defaultConfiguration = new DefaultConfiguration(cacheMap, ehcacheCachingProvider.getDefaultClassLoader());
         javax.cache.CacheManager cacheManager = ehcacheCachingProvider.getCacheManager(ehcacheCachingProvider.getDefaultURI(), defaultConfiguration);
