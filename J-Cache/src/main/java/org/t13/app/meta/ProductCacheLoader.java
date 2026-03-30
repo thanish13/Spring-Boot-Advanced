@@ -28,8 +28,8 @@ public class ProductCacheLoader {
     @PostConstruct
     public void loadCache() throws IOException, InterruptedException {
         Cache cache = cacheManager.getCache("MY_CACHE");
-        cache.put("response", getDetails());
-        System.out.println("Cache preloaded with products!");
+        cache.put("products", getDetails());
+        log.info("Cache preloaded with products!");
     }
 
     @Cacheable("MY_CACHE")
@@ -43,7 +43,7 @@ public class ProductCacheLoader {
                 .build();
 
         HttpResponse<String> response = httpClient.send(request,HttpResponse.BodyHandlers.ofString());
-
+        log.info("Got response from URL");
         return response.body();
     }
 }

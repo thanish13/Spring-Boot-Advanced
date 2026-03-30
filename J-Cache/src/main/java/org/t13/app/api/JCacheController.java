@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.t13.app.meta.ProductCacheLoader;
 
 import java.io.IOException;
+import java.util.Objects;
 
 @RestController
 @Slf4j
@@ -24,10 +25,15 @@ public class JCacheController {
     @GetMapping("/hello")
     public String sayHello() throws IOException, InterruptedException {
 
-        Cache cache = cacheManager.getCache("MY_CACHE");
-        String value = cache.get("response") == null ? productCacheLoader.getDetails() : cache.get("response").toString();
-        System.out.println("Cached value: " + value);
-        return value;
+        var products = cacheManager.getCache("MY_CACHE").get("products");
+
+        if (products == null) {
+            log.info("Cache not found!");
+            productCacheLoader.loadCache();
+        }
+
+        return cacheManager.getCache("MY_CACHE").get("products").toString();
+
 
     }
 }
