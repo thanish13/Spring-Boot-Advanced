@@ -15,6 +15,7 @@ import static org.t13.app.config.CachingConfig.USER_CACHE;
 @Slf4j
 @Service
 public class UserCacheLoader {
+
     HttpClient httpClient = HttpClient.newBuilder().version(HttpClient.Version.HTTP_1_1).build();
 
     @Cacheable(value = USER_CACHE)
