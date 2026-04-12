@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+  batch:
+    job:
+      enabled: true   # Run the batch job automatically at startup
+    initialize-schema: always
+
+logging:
+  level:
+    org.springframework.batch: DEBUG
+    org.springframework.jdbc.core: DEBUG
