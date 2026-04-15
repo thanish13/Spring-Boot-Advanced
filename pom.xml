@@ -20,6 +20,7 @@
         <module>J-Cache</module>
         <module>SOAP-SSL</module>
         <module>Spring-Batch</module>
+        <module>Spring-Kafka</module>
     </modules>
 
     <parent>
