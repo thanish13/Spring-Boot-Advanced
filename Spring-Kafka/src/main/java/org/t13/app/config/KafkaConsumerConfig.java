@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.support.serializer.JsonDeserializer;
+import org.t13.app.entity.Employee;
 
 import java.util.Properties;
 
@@ -39,7 +40,7 @@ public class KafkaConsumerConfig {
         consumerProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapAddress);
         consumerProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         consumerProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
-        consumerProps.put(JsonDeserializer.VALUE_TYPE_METHOD, Object.class);
+        consumerProps.put(JsonDeserializer.VALUE_TYPE_METHOD, Employee.class);
         consumerProps.put(ConsumerConfig.GROUP_ID_CONFIG,groupId);
         consumerProps.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         return consumerProps;
