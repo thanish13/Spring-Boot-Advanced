@@ -1,0 +1,6 @@
+spring:
+  kafka:
+    bootstrap-servers:
+    app-id:
+    schema-url:
+    group-id:
