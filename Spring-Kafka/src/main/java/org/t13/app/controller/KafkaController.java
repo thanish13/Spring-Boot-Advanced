@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.t13.app.entity.Employee;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -20,7 +21,7 @@ public class KafkaController {
     @Autowired
     private KafkaProducer kafkaProducer;
 
-    private List<Employee> employees;
+    private final List<Employee> employees = new ArrayList<>();
 
     private ObjectMapper objectMapper = new ObjectMapper();
 
