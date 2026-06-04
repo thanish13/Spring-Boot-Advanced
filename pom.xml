@@ -21,6 +21,7 @@
         <module>SOAP-SSL</module>
         <module>Spring-Batch</module>
         <module>Spring-Kafka</module>
+        <module>Camel-Consumer</module>
     </modules>
 
     <parent>
