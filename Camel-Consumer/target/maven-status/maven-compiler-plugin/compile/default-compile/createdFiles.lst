@@ -1,0 +1,4 @@
+org\t13\app\config\RouteDefinition.class
+org\t13\app\router\ConfigRouteBuilder.class
+org\t13\app\Main.class
+org\t13\app\config\CamelIntegrationProperties.class
