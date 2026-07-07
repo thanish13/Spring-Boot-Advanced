@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class GeminiConfig {
 
-    String apiKey = System.getenv("OPENAI_API_KEY");
+    String apiKey = System.getenv("GEMINI_API_KEY");
 
     @Bean
     public ChatModel geminiChatModel(
