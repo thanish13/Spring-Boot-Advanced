@@ -11,8 +11,7 @@ public class GeminiConfig {
     String apiKey = System.getenv("GEMINI_API_KEY");
 
     @Bean
-    public ChatModel geminiChatModel(
-    ) {
+    public ChatModel geminiChatModel() {
         return GoogleAiGeminiChatModel.builder()
                 .apiKey(apiKey)
                 .modelName("gemini-2.5-flash")
