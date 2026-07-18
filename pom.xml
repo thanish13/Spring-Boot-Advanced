@@ -22,7 +22,7 @@
         <module>Spring-Batch</module>
         <module>Spring-Kafka</module>
         <module>Camel-Consumer</module>
-        <module>Langchain4j-Test</module>
+        <module>Langchain4j-Init</module>
     </modules>
 
     <parent>

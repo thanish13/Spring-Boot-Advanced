@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>Langchain4j-Test</artifactId>
+    <artifactId>Langchain4j-Init</artifactId>
 
     <properties>
         <maven.compiler.source>25</maven.compiler.source>
