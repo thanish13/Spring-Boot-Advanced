@@ -23,6 +23,7 @@
         <module>Spring-Kafka</module>
         <module>Camel-Consumer</module>
         <module>Langchain4j-Init</module>
+        <module>JUnitWriter-Tool</module>
     </modules>
 
     <parent>
@@ -138,6 +139,11 @@
             <artifactId>spring-websocket</artifactId>
             <version>7.0.3</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
 
 
