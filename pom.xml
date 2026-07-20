@@ -17,13 +17,14 @@
 
     <modules>
         <module>Spring-Cloud-Vault</module>
-        <module>J-Cache</module>
+        <module>EH-Cache</module>
         <module>SOAP-SSL</module>
         <module>Spring-Batch</module>
         <module>Spring-Kafka</module>
         <module>Camel-Consumer</module>
         <module>Langchain4j-Init</module>
         <module>JUnitWriter-Tool</module>
+        <module>Cache-Strategies</module>
     </modules>
 
     <parent>
