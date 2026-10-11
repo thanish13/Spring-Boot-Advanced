@@ -3,3 +3,7 @@
 /EH-Cache/target/
 /Spring-Cloud-Vault/${project.build.directory}/
 /SOAP-SSL/target/
+/Plugin-Init/.intellijPlatform/
+/Plugin-Init/.idea/
+/Plugin-Init/.run/
+/.idea/
